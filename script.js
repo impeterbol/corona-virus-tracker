@@ -13,7 +13,7 @@ if(mm<10) {mm='0'+mm;}
 
 today = mm+'-'+dd+'-'+yyyy;
 
-// today date end
+// today date end (old - no need)
 
 // //yesterday date
 // let newDateToday = new Date();
@@ -88,7 +88,7 @@ $(document).ready(function() {
 	// date picker limits the # of days to choose from
 
 function datePicker(){
-			var dtToday = new Date();
+		var dtToday = new Date();
     
     var month = dtToday.getMonth() + 1;
     var day = dtToday.getDate();
@@ -98,8 +98,10 @@ function datePicker(){
     if(day < 10)
         day = '0' + day.toString();
     
-    var maxDate = year + '-' + month + '-' + day;
+	var maxDate = year + '-' + month + '-' + day;
+	
 	$('#datePicker1').attr('max', maxDate);
+	
 	$('#datePicker1').attr('min', '2020-01-22');
 	};
 
