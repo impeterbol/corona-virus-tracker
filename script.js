@@ -15,15 +15,6 @@ if(mm<10)
 } 
 
 today = mm+'-'+dd+'-'+yyyy;
-// console.log(today);
-
-
-
-
-// var date = new Date();
-// var yesterday = new Date(date.getTime() - 24*60*60*1000);
-
-// console.log(yesterday);
 
 
 let newDateToday = new Date();
@@ -41,46 +32,48 @@ console.log(yesterday);
 const urlToday = `https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/${today}.csv`
 const urlYesterday = `https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/${yesterday}.csv`
 
-//getting data for today
-	document.getElementById('submit').addEventListener("click", function() {
-	
-		checkLogin();
-		$("#todayDate").html(today);
-	  });
-	  
-	  function checkLogin() {
-		Papa.parse(urlToday, {
-		  download: true,
-		  complete: function(results) {
-			  	// $("#output").empty();
-			// $("#today").html(results.data);
-			
-			$("#today").append(arrayToTable(results.data));
+
+
+
+$("#submit").on("click",function(){
+	$("#today").empty();
+	$("#yesterday").empty();
+	$("#todayDate").html(today);
+	$("#yesterdayDate").html(yesterday);
+
+	dataForToday();
+	dataForYesterday();
+
+})
+
+// getting data for today
+		function dataForToday() {
+			Papa.parse(urlToday, {
+			  download: true,
+			  complete: function(results) {
+				  
+				// $("#today").html(results.data);
+				
+				$("#today").append(arrayToTable(results.data));
+			  }
+			});
 		  }
-		});
-	  }
 
+//getting data for day before
+		  function dataForYesterday(){
+			Papa.parse(urlYesterday, {
+				download: true,
+				complete: function(results) {
+				  
+				  
+				  $("#yesterday").append(arrayToTable(results.data));
+				}
+			  });
 
-	  //getting data for day before
-	document.getElementById('submit').addEventListener("click", function() {
-	
-		checkLogin();
-		$("#yesterdayDate").html(yesterday);
-	  });
-	  
-	  function checkLogin() {
-		Papa.parse(urlYesterday, {
-		  download: true,
-		  complete: function(results) {
-			  	// $("#output").empty();
-			// $("#today").html(results.data);
-			
-			$("#yesterday").append(arrayToTable(results.data));
 		  }
-		});
-	  }
-
-
+	
+	
+//adding data to the table
     function arrayToTable(tableData) {
         var table = $('<table></table>');
         $(tableData).each(function (i, rowData) {
