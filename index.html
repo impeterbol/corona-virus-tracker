@@ -28,12 +28,12 @@
         
         <p>The coronavirus outbreak is an ongoing global outbreak of coronavirus disease (COVID-19) first identified in Wuhan, Hubei, China in December 2019.</p>
         <p>This page provides the recent info about the COVID-19 spread around the world (updated daily from systems.jhu.edu) </p>
-        <p>Currently data is available for <span id='dataDays'></span> days. Pick a date from the field below and click submit to see the data.You can support this portal by clicking the Donate button at the bottom.</p>
+        <p>As of today (<span id='todayDate'></span>) historical data is available for <span id='dataDays'></span> days since January 22, 2020. Pick a date from the field below and click submit to see the data.You can support this portal by clicking the Donate button at the bottom.</p>
         
              <!-- date picker here  -->
           
-             <input type="date" id="datePicker"/>
-             <button type="button" class="btn btn-light" id='submitBtn'>Submit</button>
+             <input type="date" id="datePicker1" />
+             <button type="button" class="btn btn-primary" id='submitBtn'>Submit</button>
              <!-- end of date picker -->
      
        
@@ -47,21 +47,16 @@
      
           <div class="card">
   
-            <!-- to add data about today -->
-            <div class="card-header">
-              <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseToday" aria-expanded="false" aria-controls="collapseExample">
-                Data for <span id='todayDate'></span>
-              </button>
-            </div>
-
-            <div class="collapse" id="collapseToday">
+    
+            <!-- <div class="collapse" id="collapseToday"> -->
             <div class="card-body emp" id="today-section">
-              <p>Data for today will appear here once updated</p>
+              <p>Select the date and press Submit button to see the stats</p>
+              <p> (Data for <span id='todayDate1'></span> today will appear here once updated)</p>
               <div class="table-responsive">
                 <table class="table" id="today"></table>
               </div>
             </div>
-            </div>
+            <!-- </div> -->
 
 
           </div>
@@ -69,30 +64,6 @@
       </div>
 
 
-      <div class="row">
-        <div class="col-sm-12">
-          <br>
-  
-          <div class="card">
-  
-            <!-- card Heading for the yesterday list -->
-            <div class="card-header">
-              <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseYesterday" aria-expanded="false" aria-controls="collapseExample">
-                Data for <span id='yesterdayDate'></span>
-              </button>
-            </div>
-
-            <div class="collapse" id="collapseYesterday">
-            <div class="card-body emp" id="yesterday-section">
-              <div class="table-responsive">
-                <table class="table" id="yesterday"></table>
-              </div>
-            </div>
-          </div>
-          </div>
-        </div>
-      </div>
-    
       <!-- end of card -->
 
     <!-- adding a footer -->
@@ -113,6 +84,7 @@
          <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
          <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
          </form>
+         Created by Peter Bold
          
  
        <!-- paypal end -->
@@ -129,6 +101,7 @@
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.1.0/papaparse.js"></script>
    <script src='./script.js'></script>
+  <!-- Have fun and stay healthy! Peter :)  -->
 </body>
 </html>
 
