@@ -1,4 +1,10 @@
 
+// messing up with dates
+
+//today date to include into url
+let thetoday = new Date();
+console.log(thetoday);
+
 let today = new Date();
 let dd = today.getDate();
 
@@ -16,7 +22,9 @@ if(mm<10)
 
 today = mm+'-'+dd+'-'+yyyy;
 
+// today date end
 
+//yesterday date
 let newDateToday = new Date();
 let yesterday = new Date(newDateToday);
 yesterday.setDate(newDateToday.getDate() - 1); //setDate also supports negative values, which cause the month to rollover.
@@ -26,20 +34,28 @@ let nmm = yesterday.getMonth()+1; //January is 0!
 
 let nyyyy = yesterday.getFullYear();
 if(ndd<10){ndd='0'+ndd} if(nmm<10){nmm='0'+nmm} yesterday = nmm+'-'+ndd+'-'+nyyyy;
-console.log(yesterday);
+// console.log(yesterday);
 
+//yesterday date end
+
+//counter of dates
+
+
+//counter of dates end
 
 const urlToday = `https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/${today}.csv`
 const urlYesterday = `https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/${yesterday}.csv`
 
 
-
+window.addEventListener('load', (event) => {
+	$("#todayDate").html(today);
+	$("#yesterdayDate").html(yesterday);
+  });
 
 $("#submit").on("click",function(){
 	$("#today").empty();
 	$("#yesterday").empty();
-	$("#todayDate").html(today);
-	$("#yesterdayDate").html(yesterday);
+	
 
 	dataForToday();
 	dataForYesterday();
