@@ -27,35 +27,24 @@
         <hr class="my-4">
         
         <p>The coronavirus outbreak is an ongoing global outbreak of coronavirus disease (COVID-19) first identified in Wuhan, Hubei, China in December 2019.</p>
-        <p>This page provides the recent info about the COVID-19 spread around the world and has <strong>data available for <span id='dataDays'></span> days</strong> (updated daily from systems.jhu.edu) </p>
-        <p>You can support this portal by clicking the Donate button:</p>
+        <p>This page provides the recent info about the COVID-19 spread around the world (updated daily from systems.jhu.edu) </p>
+        <p>Currently data is available for <span id='dataDays'></span> days. Pick a date from the field below and click submit to see the data.You can support this portal by clicking the Donate button at the bottom.</p>
         
-        
-        <!-- paypal button here -->
-
-        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-          <input type="hidden" name="cmd" value="_donations" />
-          <input type="hidden" name="business" value="T7Y7WPTYT67W6" />
-          <input type="hidden" name="currency_code" value="USD" />
-          <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
-          <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
-          </form>
+             <!-- date picker here  -->
           
-
-        <!-- paypal end -->
-        
+             <input type="date" id="datePicker"/>
+             <button type="button" class="btn btn-light" id='submitBtn'>Submit</button>
+             <!-- end of date picker -->
+     
+       
        
       </div>
 
         <!-- This row will handle all the data -->
     <div class="row">
         <div class="col-sm-12">
-          <input type="date" id="datePicker"/>
-          <!-- date picker here  -->
-          
-          
-          <!-- end of date picker -->
-  
+         
+     
           <div class="card">
   
             <!-- to add data about today -->
@@ -106,6 +95,34 @@
     
       <!-- end of card -->
 
+    <!-- adding a footer -->
+
+    <footer class="page-footer font-small blue fixed-bottom">
+
+      <!-- Copyright -->
+      <div class="footer-copyright text-center py-3"> 
+        
+
+        Donate via PayPal
+        <!-- paypal button here -->
+
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+         <input type="hidden" name="cmd" value="_donations" />
+         <input type="hidden" name="business" value="T7Y7WPTYT67W6" />
+         <input type="hidden" name="currency_code" value="USD" />
+         <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+         <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+         </form>
+         
+ 
+       <!-- paypal end -->
+        
+      </div>
+      <!-- Copyright -->
+    
+    </footer>
+      
+      
 <!-- adding an arrow to scroll to the top -->
       <a id="back2Top" title="Back to top" href="#">&#10148;</a>
       <!-- end   adding an arrow to scroll to the top-->

@@ -30,6 +30,7 @@ if(ndd<10){ndd='0'+ndd} if(nmm<10){nmm='0'+nmm} yesterday = nmm+'-'+ndd+'-'+nyyy
 
 //yesterday date end
 
+
 //counter of dates
 let date1 = new Date("01-22-2020"); 
 let date2 = new Date(today); 
@@ -41,9 +42,14 @@ let Difference_In_Time = date2.getTime() - date1.getTime();
 let Difference_In_Days = Math.round(Difference_In_Time / (1000 * 3600 * 24)); 
   
 //To display the final no. of days (result) 
-console.log(Difference_In_Days); 
+
 //counter of dates end
 
+
+// main portion of the code 
+// 
+// 
+// 
 const urlToday = `https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/${today}.csv`
 const urlYesterday = `https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/${yesterday}.csv`
 
@@ -52,15 +58,42 @@ window.addEventListener('load', (event) => {
 	$("#dataDays").html(Difference_In_Days);
 	$("#todayDate").html(today);
 	$("#yesterdayDate").html(yesterday);
-	datepicker();
+	
 	$("#today").empty();
 	$("#yesterday").empty();
 	
 	dataForToday();
 	dataForYesterday();
+	datePicker();
+	userDateInput();
+
   });
 
+  
+  /*Scroll to top when arrow up clicked BEGIN*/
+$(window).scroll(function() {
+    var height = $(window).scrollTop();
+    if (height > 100) {
+        $('#back2Top').fadeIn();
+    } else {
+        $('#back2Top').fadeOut();
+    }
+});
+$(document).ready(function() {
+    $("#back2Top").click(function(event) {
+        event.preventDefault();
+        $("html, body").animate({ scrollTop: 0 }, "slow");
+        return false;
+    });
 
+});
+ /*Scroll to top when arrow up clicked END*/
+
+//   
+// 
+// 
+// 
+// end main portion of the code
 
 // getting data for today
 		function dataForToday() {
@@ -104,40 +137,32 @@ window.addEventListener('load', (event) => {
 
 	// date picker
 
-	function datepicker (){
-		let dtToday = new Date();
+		function datePicker(){
+		var dtToday = new Date();
 		
-		let month = dtToday.getMonth() + 1;
-		let day = dtToday.getDate();
-		let year = dtToday.getFullYear();
+		var month = dtToday.getMonth() + 1;
+		var day = dtToday.getDate();
+		var year = dtToday.getFullYear();
 		if(month < 10)
 			month = '0' + month.toString();
 		if(day < 10)
 			day = '0' + day.toString();
 		
-		let maxDate = year + '-' + month + '-' + day;
-			$('#datePicker').attr('max', maxDate);
-			$('#datePicker').attr('min', '2020-01-22');
+		var maxDate = year + '-' + month + '-' + day;
+		
+		$('#datePicker').attr('max', maxDate);
+		$('#datePicker').attr('min', '2020-01-22');
 	};
 
 	// end date picker
 
 
-  /*Scroll to top when arrow up clicked BEGIN*/
-$(window).scroll(function() {
-    var height = $(window).scrollTop();
-    if (height > 100) {
-        $('#back2Top').fadeIn();
-    } else {
-        $('#back2Top').fadeOut();
-    }
-});
-$(document).ready(function() {
-    $("#back2Top").click(function(event) {
-        event.preventDefault();
-        $("html, body").animate({ scrollTop: 0 }, "slow");
-        return false;
-    });
 
-});
- /*Scroll to top when arrow up clicked END*/
+//capture user date choice
+ function userDateInput(){
+	$("#submitBtn").on("click",function(){
+		let userDate = $("#datePicker").val();
+		console.log(userDate);
+	})
+ };
+ // end capture user date choice
