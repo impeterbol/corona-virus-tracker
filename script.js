@@ -67,6 +67,7 @@ window.addEventListener('load', (event) => {
 	datePicker();
 	userDateInput();
 
+
   });
 
   
@@ -157,12 +158,32 @@ $(document).ready(function() {
 	// end date picker
 
 
-
+	
 //capture user date choice
- function userDateInput(){
+function userDateInput(){
+
+	var finalUserChoice=[];
+
 	$("#submitBtn").on("click",function(){
-		let userDate = $("#datePicker").val();
-		console.log(userDate);
-	})
+	let userDate = $("#datePicker").val();
+	readyUserDate = convertDate(userDate);
+	console.log(readyUserDate);
+	finalUserChoice.push(readyUserDate);
+	console.log(finalUserChoice);
+
+	
+	});
+
+
+	
  };
+
+//  console.log(finalUserChoice);
  // end capture user date choice
+
+//converting user input to use for the search
+ function convertDate(dateString){
+	var p = dateString.split(/\D/g);
+	return [p[1],p[2],p[0] ].join("-");
+	};
+	//
