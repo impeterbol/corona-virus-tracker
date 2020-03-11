@@ -27,8 +27,10 @@
     <div class="jumbotron">
         <h1 class="display-4"><i class="fas fa-skull-crossbones"></i> Corona virus latest stats</h1>
         <hr class="my-4">
-        <p>Data is updated daily by systems.jhu.edu</p>
-
+        
+        <p>The coronavirus outbreak is an ongoing global outbreak of coronavirus disease (COVID-19) first identified in Wuhan, Hubei, China in December 2019.</p>
+        <p>This page provides the recent info about the COVID-19 spread around the world and has <strong>data available for <span id='dataDays'></span> days</strong> (updated daily from systems.jhu.edu) </p>
+        <p>You can support this portal by clicking the Donate button:</p>
         <!-- paypal button here -->
 
         <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
@@ -41,18 +43,16 @@
           
 
         <!-- paypal end -->
-        <hr class="my-4">
+        
         <p class="lead">
-          <a class="btn btn-danger btn-lg" id='submit' href="#" role="button">Download latest data</a>
-
-          
+                   
         </p>
       </div>
 
         <!-- This row will handle all the data the current reservations -->
     <div class="row">
         <div class="col-sm-12">
-          <br>
+         
   
           <div class="card">
   
@@ -65,8 +65,9 @@
 
             <div class="collapse" id="collapseToday">
             <div class="card-body emp" id="today-section">
+              <p>Data for today will appear here once updated</p>
               <div class="table-responsive">
-               <table class="table" id="today"></table>
+                <table class="table" id="today"></table>
               </div>
             </div>
             </div>
@@ -105,6 +106,7 @@
 
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.1.0/papaparse.js"></script>
+  <script src ="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"</script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js' integrity='sha256-H9jAz//QLkDOy/nzE9G4aYijQtkLt9FvGmdUTwBk6gs=' crossorigin='anonymous'></script>
   <script src='./script.js'></script>
 </body>

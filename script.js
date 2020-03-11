@@ -2,8 +2,6 @@
 // messing up with dates
 
 //today date to include into url
-let thetoday = new Date();
-console.log(thetoday);
 
 let today = new Date();
 let dd = today.getDate();
@@ -39,8 +37,17 @@ if(ndd<10){ndd='0'+ndd} if(nmm<10){nmm='0'+nmm} yesterday = nmm+'-'+ndd+'-'+nyyy
 //yesterday date end
 
 //counter of dates
-
-
+let date1 = new Date("01-22-2020"); 
+let date2 = new Date(today); 
+  
+// To calculate the time difference of two dates 
+let Difference_In_Time = date2.getTime() - date1.getTime(); 
+  
+// To calculate the no. of days between two dates 
+let Difference_In_Days = Math.round(Difference_In_Time / (1000 * 3600 * 24)); 
+  
+//To display the final no. of days (result) 
+console.log(Difference_In_Days); 
 //counter of dates end
 
 const urlToday = `https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/${today}.csv`
@@ -48,28 +55,26 @@ const urlYesterday = `https://raw.githubusercontent.com/CSSEGISandData/COVID-19/
 
 
 window.addEventListener('load', (event) => {
-	$("#todayDate").html(today);
+	$("#dataDays").html(Difference_In_Days);
+		$("#todayDate").html(today);
 	$("#yesterdayDate").html(yesterday);
-  });
-
-$("#submit").on("click",function(){
 	$("#today").empty();
 	$("#yesterday").empty();
 	
-
 	dataForToday();
 	dataForYesterday();
+  });
 
-})
+
 
 // getting data for today
 		function dataForToday() {
 			Papa.parse(urlToday, {
 			  download: true,
 			  complete: function(results) {
-				  
+				//   console.log(results);
 				// $("#today").html(results.data);
-				
+			
 				$("#today").append(arrayToTable(results.data));
 			  }
 			});
@@ -80,8 +85,7 @@ $("#submit").on("click",function(){
 			Papa.parse(urlYesterday, {
 				download: true,
 				complete: function(results) {
-				  
-				  
+									  
 				  $("#yesterday").append(arrayToTable(results.data));
 				}
 			  });
