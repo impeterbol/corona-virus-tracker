@@ -4,19 +4,13 @@
 //today date to include into url
 
 let today = new Date();
-let dd = today.getDate();
 
+let dd = today.getDate();
 let mm = today.getMonth()+1; 
 let yyyy = today.getFullYear();
-if(dd<10) 
-{
-    dd='0'+dd;
-} 
 
-if(mm<10) 
-{
-    mm='0'+mm;
-} 
+if(dd<10) {dd='0'+dd;} 
+if(mm<10) {mm='0'+mm;} 
 
 today = mm+'-'+dd+'-'+yyyy;
 
@@ -56,8 +50,9 @@ const urlYesterday = `https://raw.githubusercontent.com/CSSEGISandData/COVID-19/
 
 window.addEventListener('load', (event) => {
 	$("#dataDays").html(Difference_In_Days);
-		$("#todayDate").html(today);
+	$("#todayDate").html(today);
 	$("#yesterdayDate").html(yesterday);
+	datepicker();
 	$("#today").empty();
 	$("#yesterday").empty();
 	
@@ -106,6 +101,26 @@ window.addEventListener('load', (event) => {
         return table;
     }
 
+
+	// date picker
+
+	function datepicker (){
+		let dtToday = new Date();
+		
+		let month = dtToday.getMonth() + 1;
+		let day = dtToday.getDate();
+		let year = dtToday.getFullYear();
+		if(month < 10)
+			month = '0' + month.toString();
+		if(day < 10)
+			day = '0' + day.toString();
+		
+		let maxDate = year + '-' + month + '-' + day;
+			$('#datePicker').attr('max', maxDate);
+			$('#datePicker').attr('min', '2020-01-22');
+	};
+
+	// end date picker
 
 
   /*Scroll to top when arrow up clicked BEGIN*/
