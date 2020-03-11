@@ -6,21 +6,18 @@
   <meta http-equiv='X-UA-Compatible' content='ie=edge'>
 
    <!-- adding bootstrap -->
-   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+   <link rel="stylesheet"
+   href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+   <script src="https://code.jquery.com/jquery.js"></script>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
    <!-- linking font awesome -->
-    <script src="https://kit.fontawesome.com/8bee116590.js" crossorigin="anonymous"></script>
+   <script src="https://kit.fontawesome.com/8bee116590.js" crossorigin="anonymous"></script>
 
 
     <title>Peter B - Corona Virus tracker</title>
 
-    <!-- Latest compiled and minified CSS & JS -->
-  <link rel="stylesheet"
-  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-<link rel="stylesheet"
-  href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<script src="https://code.jquery.com/jquery.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-
+   
 </head>
 <body>
 
@@ -31,6 +28,8 @@
         <p>The coronavirus outbreak is an ongoing global outbreak of coronavirus disease (COVID-19) first identified in Wuhan, Hubei, China in December 2019.</p>
         <p>This page provides the recent info about the COVID-19 spread around the world and has <strong>data available for <span id='dataDays'></span> days</strong> (updated daily from systems.jhu.edu) </p>
         <p>You can support this portal by clicking the Donate button:</p>
+        
+        
         <!-- paypal button here -->
 
         <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
@@ -49,14 +48,14 @@
         </p>
       </div>
 
-        <!-- This row will handle all the data the current reservations -->
+        <!-- This row will handle all the data -->
     <div class="row">
         <div class="col-sm-12">
          
   
           <div class="card">
   
-            <!-- to add data about previous day -->
+            <!-- to add data about today -->
             <div class="card-header">
               <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseToday" aria-expanded="false" aria-controls="collapseExample">
                 Data for <span id='todayDate'></span>
@@ -84,7 +83,7 @@
   
           <div class="card">
   
-            <!-- card Heading for the yesterday list to add -->
+            <!-- card Heading for the yesterday list -->
             <div class="card-header">
               <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseYesterday" aria-expanded="false" aria-controls="collapseExample">
                 Data for <span id='yesterdayDate'></span>
@@ -104,11 +103,11 @@
     
       <!-- end of card -->
 
+
+   
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.1.0/papaparse.js"></script>
-  <script src ="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"</script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js' integrity='sha256-H9jAz//QLkDOy/nzE9G4aYijQtkLt9FvGmdUTwBk6gs=' crossorigin='anonymous'></script>
-  <script src='./script.js'></script>
+   <script src='./script.js'></script>
 </body>
 </html>
 
