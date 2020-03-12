@@ -1,6 +1,6 @@
 #back2Top {
-    width: 40px;
-    line-height: 40px;
+    width: 55px;
+    line-height: 55px;
     overflow: hidden;
     z-index: 999;
     display: none;
@@ -11,7 +11,7 @@
     -ms-transform: rotate(270deg);
     transform: rotate(270deg);
     position: fixed;
-    bottom: 100px;
+    bottom: 200px;
     right: 0;
     background-color: #DDD;
     color: #555;
