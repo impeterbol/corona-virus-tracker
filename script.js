@@ -15,21 +15,6 @@ today = mm+'-'+dd+'-'+yyyy;
 
 // today date end (old - no need)
 
-// //yesterday date
-// let newDateToday = new Date();
-// let yesterday = new Date(newDateToday);
-// yesterday.setDate(newDateToday.getDate() - 1); //setDate also supports negative values, which cause the month to rollover.
-
-// let ndd = yesterday.getDate();
-// let nmm = yesterday.getMonth()+1; //January is 0!
-
-// let nyyyy = yesterday.getFullYear();
-// if(ndd<10){ndd='0'+ndd} if(nmm<10){nmm='0'+nmm} yesterday = nmm+'-'+ndd+'-'+nyyyy;
-
-
-//yesterday date end
-
-
 
 //counter of dates
 
