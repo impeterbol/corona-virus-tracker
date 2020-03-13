@@ -27,7 +27,7 @@ let Difference_In_Time = date2.getTime() - date1.getTime();
 let Difference_In_Days = Math.round(Difference_In_Time / (1000 * 3600 * 24)); 
   
 //counter of dates end
-
+console
 
 
 // main portion of the code 
@@ -41,6 +41,7 @@ window.addEventListener('load', (event) => {
 	$("#todayDate1").html(today);
 	datePicker();
 	userDateInput();
+		
 });
 
   /*Scroll to top when arrow up clicked BEGIN*/
@@ -108,7 +109,7 @@ $("#today").empty();
 
 	function dataForToday() {
 		Papa.parse(searchUrl, {
-		  download: true,
+		 download: true,
 		  complete: function(results) {
 					
 			$("#today").append(arrayToTable(results.data));
@@ -118,24 +119,25 @@ $("#today").empty();
 
 	  //adding data to the table
 	  function arrayToTable(tableData) {
-        var table = $('<table></table>');
-        $(tableData).each(function (i, rowData) {
+		var table = $('<table id="tableFixHead"></table>');
+		$(tableData).each(function (i, rowData) {
             var row = $('<tr></tr>');
             $(rowData).each(function (j, cellData) {
                 row.append($('<td>'+cellData+'</td>'));
             });
             table.append(row);
-        });
-        return table;
+		});
+	
+		return table;
+		
     }
 
 	});
 
-
-	
  };
 
  // end capture user date choice
+
 
 //converting user input to use for the search
  function convertDate(dateString){
@@ -145,3 +147,16 @@ $("#today").empty();
 	//
 
 	// Have fun and stay healthy! Peter :) 
+
+// in case I need data from the table - but it's same as papa parse returns
+	// function getTableData(table) {
+	// 	var data = [];
+	// 	table.find('tr').each(function (rowIndex, r) {
+	// 		var cols = [];
+	// 		$(this).find('th,td').each(function (colIndex, c) {
+	// 			cols.push(c.textContent);
+	// 		});
+	// 		data.push(cols);
+	// 	});
+	// 	console.log(data);
+	// };
