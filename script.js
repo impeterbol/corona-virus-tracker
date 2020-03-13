@@ -106,13 +106,15 @@ $("#today").empty();
 	const searchUrl = `https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/${readyUserDate}.csv`
 	
 	dataForToday();
-
+		scrollToTable();
+	
 	function dataForToday() {
 		Papa.parse(searchUrl, {
 		 download: true,
 		  complete: function(results) {
 					
 			$("#today").append(arrayToTable(results.data));
+			scrollToTable();
 		  }
 		});
 	  }
@@ -130,7 +132,17 @@ $("#today").empty();
 	
 		return table;
 		
-    }
+	}
+	
+	//scrolling to the results for mobile
+	function scrollToTable(){
+		$('html, body').animate({
+			scrollTop: $("#tableFixHead").offset().top
+		  }, 1000);
+	}
+	//end scrolling to the results for mobile
+	
+
 
 	});
 
